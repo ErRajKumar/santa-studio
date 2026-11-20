@@ -1,0 +1,8 @@
+{
+  "name": "Santa Studio",
+  "description": "Create personalised Christmas invitations and greeting cards in minutes with instant high-resolution PNG and bulk ZIP downloads.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

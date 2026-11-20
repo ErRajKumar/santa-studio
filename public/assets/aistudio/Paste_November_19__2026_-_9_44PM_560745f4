@@ -1,0 +1,1224 @@
+# SANTA STUDIO — COMPLETE PRODUCT DEVELOPMENT MASTER PROMPT
+
+## 1. YOUR ROLE
+
+Act as a senior product designer, creative director, frontend architect, UI/UX specialist and experienced React developer.
+
+Build a commercially presentable, premium Christmas card creation platform called **Santa Studio**.
+
+This is not a basic school project, a generic template gallery or a simple form with a canvas.
+
+It should feel like a polished creative SaaS product with the visual quality of a premium design application.
+
+The product should allow customers to:
+
+1. Browse professionally designed Christmas invitation cards.
+2. Browse Christmas greeting and wishes cards.
+3. Select from 20 unique designs.
+4. Personalise cards using an intuitive editor.
+5. Upload their own photographs.
+6. Preview their changes instantly.
+7. Download high-resolution PNG cards.
+8. Generate multiple personalised cards and download them in a ZIP file.
+
+The complete product must be easy to use, visually engaging, responsive and compatible with GitHub Pages.
+
+---
+
+# 2. CRITICAL TECHNICAL REQUIREMENTS
+
+This project MUST be deployable as a completely static website.
+
+### Technology stack
+
+Use:
+
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- Lucide icons
+- HTML Canvas or a suitable client-side rendering library
+- JSZip for bulk downloads
+- A reliable client-side image export library where appropriate
+- CSS animations and lightweight SVG illustrations
+
+Use stable, compatible npm packages.
+
+### GitHub Pages compatibility
+
+This requirement is non-negotiable.
+
+The finished application must:
+
+- Work without a backend.
+- Work without Supabase.
+- Work without Firebase.
+- Work without a database.
+- Work without server-side functions.
+- Work without authentication.
+- Work without private API keys.
+- Work without paid infrastructure.
+- Run entirely in the browser.
+
+All customer data must be processed locally.
+
+Use browser storage where appropriate for saving draft customisations.
+
+Use relative asset paths and configure Vite's base path correctly for GitHub Pages.
+
+Support deployment through GitHub Actions.
+
+Provide:
+
+1. A complete source-code project.
+2. package.json.
+3. vite.config.ts configured for GitHub Pages.
+4. A GitHub Actions deployment workflow.
+5. A README with complete installation and deployment instructions.
+6. A production build command.
+7. A preview command.
+
+The application must work both locally and under a GitHub Pages repository URL, not just at localhost.
+
+Avoid server-side routing dependencies. Use client-side state or hash-based navigation where appropriate so page refreshes do not produce 404 errors.
+
+All assets, fonts, icons and illustrations should be bundled locally wherever practical.
+
+Do not rely on external image URLs for essential card designs.
+
+---
+
+# 3. BRAND IDENTITY AND VISUAL DIRECTION
+
+Brand name: SANTA STUDIO
+
+Tagline: Make the season unforgettable.
+
+Brand personality:
+
+- Magical
+- Premium
+- Elegant
+- Festive
+- Warm
+- Creative
+- Sophisticated
+- Customer-friendly
+
+### Visual identity
+
+Build a cinematic Christmas atmosphere.
+
+Use a carefully balanced palette:
+
+Primary:
+- Midnight navy: #091725
+- Deep evergreen: #143B2C
+- Forest green: #1D4A35
+
+Secondary:
+- Champagne gold: #D8B56D
+- Warm ivory: #F8F1E5
+- Snow white: #FFFFFF
+
+Festive accents:
+- Christmas red: #A92332
+- Cranberry: #751C2C
+- Ice blue: #B9D9EC
+
+Avoid making every element red and green.
+
+The visual experience should resemble a premium Christmas boutique.
+
+### Typography
+
+Use an elegant combination:
+
+- Playfair Display or Cormorant Garamond for editorial headings.
+- Inter or DM Sans for interface text.
+- A tasteful script font for decorative Christmas typography.
+
+Maintain excellent readability.
+
+---
+
+# 4. CHRISTMAS ATMOSPHERE AND ANIMATIONS
+
+The entire experience should feel like entering a magical Christmas world.
+
+Create a cinematic midnight winter background.
+
+### Background elements
+
+Include:
+
+1. A deep midnight-blue sky.
+2. Small twinkling stars.
+3. A softly glowing moon.
+4. Slow-moving clouds.
+5. Gentle falling snow.
+6. Christmas lights.
+7. Small decorative stars and sparkles.
+8. Snow-covered decorative branches.
+9. Subtle Christmas ornaments.
+10. Festive red and gold ribbon accents.
+
+Include an elegant illustrated Santa sleigh with reindeer flying across the distant sky if it can be designed professionally.
+
+Do not use childish-looking emoji characters as the main illustrations.
+
+Use tasteful SVG illustrations and CSS-created effects.
+
+### Animation requirements
+
+- Stars should twinkle at different intervals.
+- Snowflakes should fall slowly.
+- Clouds should drift gently.
+- Christmas lights should glow softly.
+- Buttons should have subtle hover animations.
+- Cards should have gentle hover elevation.
+- Page transitions should be smooth.
+- The interface must never feel visually overloaded.
+
+Performance is important.
+
+Use CSS animations and lightweight SVGs instead of large videos or animation libraries.
+
+Respect prefers-reduced-motion.
+
+Keep all background animations behind the content.
+
+Forms and buttons must always have excellent contrast.
+
+---
+
+# 5. WEBSITE ARCHITECTURE — TWO SEPARATE PAGES
+
+Create two clearly separated experiences.
+
+PAGE 1: COLLECTIONS / HOMEPAGE
+
+PAGE 2: CARD EDITOR
+
+Do not combine the entire homepage and editor into one complicated screen.
+
+Give both pages independent styling and layout rules.
+
+Suggested architecture:
+
+santa-studio/
+│
+├── index.html
+├── editor.html
+├── package.json
+├── vite.config.ts
+├── README.md
+│
+├── public/
+│   ├── assets/
+│   │   ├── icons/
+│   │   ├── illustrations/
+│   │   └── templates/
+│
+├── src/
+│   ├── components/
+│   ├── pages/
+│   │   ├── HomePage.tsx
+│   │   └── EditorPage.tsx
+│   ├── templates/
+│   │   ├── invitations/
+│   │   └── wishes/
+│   ├── canvas/
+│   ├── hooks/
+│   ├── utils/
+│   ├── styles/
+│   └── main.tsx
+│
+└── .github/
+    └── workflows/
+        └── deploy.yml
+
+You can improve this structure if needed, but maintain separation between the homepage, editor, template definitions and rendering logic.
+
+---
+
+# 6. PAGE ONE — PREMIUM HOMEPAGE
+
+This is the customer's first impression.
+
+It must immediately communicate quality and make the customer want to explore the designs.
+
+## Desktop layout
+
+Create a full-width cinematic homepage.
+
+### A. Navigation
+
+Create a transparent floating navigation bar.
+
+Left:
+- Santa Studio logo.
+- Small elegant Christmas star symbol.
+
+Center:
+- Home
+- Invitation Cards
+- Wishes Cards
+- How It Works
+
+Right:
+- Create Your Card button.
+
+Use smooth navigation to the relevant sections.
+
+### B. Hero section
+
+Make this the visual centrepiece.
+
+Large headline:
+
+"Make the season unforgettable."
+
+Style:
+- Elegant serif typography.
+- Gold italic emphasis on "unforgettable".
+- Large responsive text.
+- Beautiful spacing.
+
+Subtitle:
+
+"Create beautiful, personalised Christmas cards and invitations in minutes. Celebrate your moments with designs made to feel special."
+
+Add two CTA buttons:
+
+1. Explore Invitation Cards
+2. Explore Wishes Cards
+
+Include three trust-style highlights:
+
+- 20 Exclusive Designs
+- Personalise in Minutes
+- Instant High-Quality Downloads
+
+On the right side, show an attractive composition of three or four overlapping Christmas card mockups.
+
+Use actual card designs from the template collection.
+
+Give the mockups subtle perspective, shadows and floating animation.
+
+The hero should feel cinematic, not like a generic SaaS landing page.
+
+### C. Invitation Cards section
+
+Heading:
+
+"Christmas Invitations"
+
+Subtitle:
+
+"Make every celebration worth remembering."
+
+Show an attractive gallery of invitation designs.
+
+Display six cards in the initial desktop gallery, with the ability to browse all ten.
+
+Each card should have:
+
+- Actual design thumbnail.
+- Template name.
+- Short design description.
+- Preview interaction.
+- Customise button.
+
+Use attractive card containers, refined borders and gentle hover animations.
+
+Add a View All Invitations link.
+
+### D. Wishes Cards section
+
+Heading:
+
+"Spread Christmas Joy"
+
+Subtitle:
+
+"Send a little happiness to the people who matter."
+
+Display six attractive wishes card thumbnails initially.
+
+Show all ten designs through View All.
+
+Each card must have:
+- Thumbnail.
+- Name.
+- Style description.
+- Preview.
+- Customise button.
+
+### E. How it works
+
+Create three elegant steps:
+
+01 — Choose Your Design
+
+Explore our Christmas collection.
+
+02 — Make It Personal
+
+Add your name, message, photograph and other details.
+
+03 — Download and Share
+
+Download your personalised card instantly.
+
+Use tasteful icons and small illustrations.
+
+### F. Final CTA
+
+Heading:
+
+"Your Christmas story deserves a beautiful card."
+
+Button:
+
+Create Your Christmas Card.
+
+### G. Footer
+
+Include:
+
+- Santa Studio logo.
+- About.
+- How It Works.
+- Privacy information.
+- Contact placeholder.
+- Copyright notice.
+
+Do not add fake testimonials, fake customer numbers or fake reviews.
+
+---
+
+# 7. HOMEPAGE — MOBILE DESIGN
+
+Mobile is extremely important.
+
+Do not simply shrink the desktop homepage.
+
+Create a dedicated mobile layout.
+
+Requirements:
+
+- Compact top navigation.
+- Logo on the left.
+- Hamburger menu on the right.
+- Hero headline with elegant wrapping.
+- Main CTA buttons full-width or stacked.
+- Card mockup displayed prominently.
+- Invitation and wishes galleries in a two-column grid.
+- Readable template labels.
+- Comfortable touch targets.
+- No horizontal overflow.
+- No overlapping text.
+- No excessively tall hero section.
+- Smooth scrolling.
+
+The customer should understand what the product does within a few seconds.
+
+Make the template thumbnails large enough to identify the actual designs.
+
+On mobile, cards should use a clean two-column gallery, changing to one column only when the viewport is extremely narrow.
+
+---
+
+# 8. PAGE TWO — CARD EDITOR
+
+This is the most important page of the product.
+
+Customers will spend most of their time here.
+
+The editor must be exceptionally easy to use.
+
+The selected design must automatically load when the customer enters the editor.
+
+Example:
+
+editor.html?type=invitation&template=invitation-04
+
+Support both invitation and wishes templates.
+
+## DESKTOP EDITOR LAYOUT
+
+Use a sophisticated, fixed-height workspace.
+
+The overall editor should fit the available browser viewport.
+
+Avoid page-level vertical scrolling in the editor.
+
+Use the following layout:
+
+TOP HEADER:
+- Back to Collections.
+- Current template category and name.
+- Santa Studio branding.
+- Optional Save Draft indicator.
+
+MAIN WORKSPACE:
+
+LEFT PANEL — CUSTOMISATION FORM
+
+RIGHT PANEL — LIVE CARD PREVIEW
+
+BOTTOM OF RIGHT PANEL — TEMPLATE SELECTOR
+
+BOTTOM ACTION BAR:
+- Preview.
+- Download PNG.
+
+### Important layout rules
+
+The left form and right preview must start at the same vertical position.
+
+The preview must remain visible while the user edits the form.
+
+Only the form panel may scroll independently if the form exceeds available height.
+
+The action bar must always remain visible.
+
+The customer should never need to scroll to the top to view their card again.
+
+The preview should automatically scale according to available space.
+
+The template selector must be horizontal and independently scrollable.
+
+Do not use global overflow:hidden in a way that clips the page header, footer or content.
+
+Use CSS Grid and min-height: 0 correctly.
+
+---
+
+# 9. MOBILE EDITOR DESIGN
+
+Mobile must have a completely different interaction pattern.
+
+Never show the form and card preview together on a small screen.
+
+The mobile experience should work as follows:
+
+### STEP 1 — Preview
+
+When the customer enters the editor:
+
+- Show the selected card immediately.
+- Display a large card preview.
+- Show the template selector underneath.
+- Show a prominent Customize It button.
+- Show a Download button.
+
+The customer should never need to scroll back to the top to see the card.
+
+### STEP 2 — Customisation
+
+When the customer taps Customize It:
+
+Open a polished bottom-sheet or full-screen editing panel.
+
+The form should scroll independently inside the panel.
+
+Include:
+- Clear section headings.
+- Attractive form fields.
+- Proper spacing.
+- Large touch-friendly controls.
+- Close button.
+- Preview Card button.
+- Download button.
+
+### STEP 3 — Preview
+
+When Preview Card is tapped:
+
+- Close or minimise the form panel.
+- Show the card with the updated information.
+- Preserve all entered information.
+- Do not reset the form.
+
+### STEP 4 — Download
+
+Download should be accessible without having to search through the form.
+
+Use a fixed mobile action bar.
+
+Respect iPhone safe-area insets.
+
+Test on:
+- 320px wide screens.
+- 360px wide screens.
+- 375px wide screens.
+- 390px wide screens.
+- 430px wide screens.
+- Tablets.
+
+No horizontal scrolling of the entire page.
+
+---
+
+# 10. INVITATION CARD COLLECTION — 10 UNIQUE DESIGNS
+
+Create ten genuinely different, professionally designed Christmas invitation templates.
+
+Do not create ten cards that merely change their background colours.
+
+Each template needs its own visual identity, layout, typography, decorative elements and composition.
+
+All ten must be rendered as actual editable card designs, not static image backgrounds.
+
+Use a high-quality portrait format, approximately 4:5.
+
+### INVITATION 01 — Classic Christmas Elegance
+
+Style:
+- Deep forest green.
+- Gold decorative borders.
+- Elegant serif typography.
+- Christmas wreath.
+- Subtle snowflakes.
+
+Headline:
+"You're Invited"
+
+Large event title:
+"Christmas Celebration"
+
+### INVITATION 02 — Midnight Christmas
+
+Style:
+- Midnight navy.
+- Gold stars.
+- Crescent moon.
+- Snow-covered pine trees.
+- Elegant typography.
+
+Headline:
+"An Evening of Christmas Magic"
+
+### INVITATION 03 — Candy Cane Christmas
+
+Style:
+- Warm ivory.
+- Red and white candy-cane stripes.
+- Festive ribbon.
+- Playful but premium typography.
+
+Headline:
+"Let's Celebrate Christmas!"
+
+### INVITATION 04 — Christmas Neon Party
+
+Style:
+- Dark background.
+- Pink and cyan neon.
+- Glowing sunset or Christmas lights.
+- Modern bold typography.
+
+Headline:
+"Christmas Party"
+
+### INVITATION 05 — Rustic Christmas
+
+Style:
+- Kraft paper.
+- Pine branches.
+- Twine.
+- Warm beige.
+- Rustic red accents.
+
+Headline:
+"A Cozy Christmas Gathering"
+
+### INVITATION 06 — Luxury Gold Christmas
+
+Style:
+- Black or deep emerald.
+- Champagne gold.
+- Sophisticated ornaments.
+- Minimal luxury layout.
+
+Headline:
+"An Exclusive Christmas Celebration"
+
+### INVITATION 07 — Snowy Wonderland
+
+Style:
+- Ice blue.
+- White snowflakes.
+- Frosted trees.
+- Soft glowing effects.
+
+Headline:
+"Winter Wonderland"
+
+### INVITATION 08 — Santa's Christmas Party
+
+Style:
+- Traditional Christmas red.
+- Santa illustration.
+- Presents.
+- Christmas stockings.
+- Festive playful typography.
+
+Headline:
+"Santa's Coming to Town!"
+
+### INVITATION 09 — Minimal Nordic Christmas
+
+Style:
+- Ivory.
+- Muted green.
+- Simple pine illustration.
+- Clean Scandinavian layout.
+- Generous whitespace.
+
+Headline:
+"Christmas Together"
+
+### INVITATION 10 — Christmas Ticket
+
+Style:
+- Vintage ticket design.
+- Perforated borders.
+- Christmas red and cream.
+- Barcode decoration.
+- Vintage typography.
+
+Headline:
+"Admit One — Christmas Night"
+
+All templates must be visually polished and commercially presentable.
+
+---
+
+# 11. INVITATION FORM FIELDS
+
+The form should dynamically support all invitation templates.
+
+Provide these fields:
+
+### Event details
+
+1. Event title.
+2. Event subtitle.
+3. Host name.
+4. Event date.
+5. Event start time.
+6. Event end time (optional).
+7. Venue name.
+8. Full address.
+9. RSVP contact.
+10. RSVP deadline.
+
+### Personalisation
+
+11. Guest name.
+12. Personal invitation message.
+13. Dress code.
+14. Additional information.
+15. Website or event link (optional).
+
+### Photograph
+
+16. Upload personal photograph (optional).
+
+### Design customisation
+
+17. Text colour.
+18. Font selection.
+19. Background colour where supported.
+20. Text alignment where supported.
+
+Do not overload the user with every option simultaneously.
+
+Group the form into collapsible sections:
+
+- Event Information.
+- Personal Message.
+- Guest Details.
+- Photo.
+- Design Options.
+
+Add sensible prefilled example values.
+
+Every change should update the preview immediately.
+
+Allow the user to leave optional fields blank.
+
+If a field is blank, hide its corresponding text element instead of displaying empty labels.
+
+---
+
+# 12. WISHES CARD COLLECTION — 10 UNIQUE DESIGNS
+
+Create ten distinct Christmas greeting cards.
+
+These must feel like premium greeting cards suitable for sharing with friends, family, colleagues and loved ones.
+
+### WISHES 01 — Traditional Merry Christmas
+
+Red and green, gold lettering, traditional ornaments.
+
+### WISHES 02 — Elegant Gold Wishes
+
+Champagne gold, ivory and delicate Christmas branches.
+
+### WISHES 03 — Snowfall Greetings
+
+Ice blue, white snowflakes and winter scenery.
+
+### WISHES 04 — Christmas Lights
+
+Beautiful glowing multicolour lights against a dark background.
+
+### WISHES 05 — Santa Greetings
+
+Illustrated Santa, presents and warm festive colours.
+
+### WISHES 06 — Luxury Minimal
+
+Elegant cream background, subtle green foliage and refined typography.
+
+### WISHES 07 — Christmas Family
+
+Warm family-oriented design with optional uploaded family photograph.
+
+### WISHES 08 — Cute Christmas
+
+Cute but professionally illustrated Christmas characters, gingerbread, reindeer and ornaments.
+
+### WISHES 09 — Midnight Starry Christmas
+
+Dark navy, golden stars, moon and sophisticated typography.
+
+### WISHES 10 — Modern Editorial Christmas
+
+Contemporary typography, bold composition, geometric Christmas elements and elegant colours.
+
+Make each card look like a different professional designer created it.
+
+---
+
+# 13. WISHES FORM FIELDS
+
+Provide:
+
+### Message details
+
+1. Recipient name.
+2. Greeting headline.
+3. Main Christmas message.
+4. Sender name.
+5. Family or company name (optional).
+6. Additional message.
+
+### Photograph
+
+7. Upload personal photograph.
+8. Optional photo caption.
+
+### Design options
+
+9. Font selection.
+10. Text colour.
+11. Text alignment.
+12. Background options where supported.
+
+Provide useful defaults.
+
+The customer should be able to create a beautiful card without touching advanced settings.
+
+---
+
+# 14. CARD RENDERING ENGINE
+
+This is a critical functional requirement.
+
+Do not create static mockup images and pretend they are editable cards.
+
+Every card must be generated through a reusable rendering system.
+
+Create a template configuration system.
+
+Each template should define:
+
+- Template ID.
+- Template category.
+- Template name.
+- Background.
+- Decorative illustrations.
+- Text positions.
+- Font families.
+- Font sizes.
+- Text colours.
+- Photo placement.
+- Alignment.
+- Text wrapping rules.
+
+Example:
+
+{
+  "id": "invitation-04",
+  "category": "invitation",
+  "name": "Christmas Neon Party",
+  "aspectRatio": "4:5",
+  "fields": {
+    "eventTitle": {},
+    "date": {},
+    "venue": {},
+    "guestName": {}
+  }
+}
+
+The actual schema can be improved.
+
+Use a reusable canvas renderer that draws each template using its configuration.
+
+The output must be a high-resolution card.
+
+Suggested export resolution:
+1200 × 1500 pixels minimum.
+
+Prefer 2400 × 3000 pixels for print-quality output where device performance permits.
+
+Maintain the original card aspect ratio.
+
+Ensure:
+- Proper text wrapping.
+- No clipped text.
+- No overlapping elements.
+- Correct image cropping.
+- Consistent font rendering.
+- Correct alignment.
+- Good contrast.
+
+Use device-independent rendering dimensions.
+
+The preview can render at a lower resolution for performance, but final downloads must render at the target export resolution.
+
+---
+
+# 15. PHOTO UPLOAD EXPERIENCE
+
+Do not use a plain browser file input as the main visual interface.
+
+Create a premium photo-upload component.
+
+Visual style:
+
+- Rounded upload area.
+- Elegant upload icon.
+- Dashed champagne-gold border.
+- Dark evergreen background.
+- Drag-and-drop support on desktop.
+- Browse Photos button on mobile.
+
+Text:
+
+"Add your personal touch"
+
+"Upload a photo to make your Christmas card special."
+
+Support:
+- JPG.
+- JPEG.
+- PNG.
+- WebP.
+
+Include:
+- Image preview.
+- Remove photo.
+- Replace photo.
+- Image cropping.
+- Position adjustment.
+- Aspect-ratio preservation.
+
+Show file size.
+
+Set a sensible maximum file size and handle oversized files with a friendly error message.
+
+Do not upload photos to a server.
+
+All photo processing must happen locally in the browser.
+
+---
+
+# 16. CARD DOWNLOAD FUNCTIONALITY
+
+Individual download:
+
+- Download as PNG.
+- Use high-resolution rendering.
+- Preserve transparency where appropriate.
+- Use meaningful filenames.
+
+Example:
+
+christmas-invitation-aarav.png
+
+Bulk download:
+
+Allow users to enter multiple guest names.
+
+Provide a textarea where they can enter one name per line.
+
+Example:
+
+Aarav
+Riya
+Rahul
+Priya
+Ananya
+
+Generate a personalised card for each guest.
+
+Display:
+- Number of cards to generate.
+- Progress indicator.
+- Current card being processed.
+- Success or failure message.
+
+Package all completed cards into one ZIP file using JSZip.
+
+Do not freeze the interface while generating cards.
+
+Process cards sequentially or in small batches to manage memory.
+
+Provide a cancellation option where practical.
+
+Revoke temporary object URLs after downloads.
+
+---
+
+# 17. CUSTOMER ENGAGEMENT AND USER EXPERIENCE
+
+The interface must guide customers without confusing them.
+
+Add:
+
+- Helpful empty states.
+- Friendly success notifications.
+- Clear validation messages.
+- Tooltips for advanced settings.
+- Loading indicators.
+- Download progress.
+- Preview transitions.
+- Helpful instructions.
+- Clear back navigation.
+
+Use clear labels.
+
+Avoid technical jargon in the customer-facing UI.
+
+Make the most common workflow extremely simple:
+
+Choose → Personalise → Preview → Download.
+
+Do not force registration.
+
+Do not create unnecessary popups.
+
+Do not use fake countdown timers or fake scarcity messages.
+
+Do not show fake testimonials.
+
+The customer must remain in control.
+
+---
+
+# 18. RESPONSIVENESS AND ACCESSIBILITY
+
+The application must work across:
+
+Desktop:
+- 1280 × 720.
+- 1366 × 768.
+- 1440 × 900.
+- 1920 × 1080.
+
+Tablet:
+- 768px.
+- 820px.
+- 1024px.
+
+Mobile:
+- 320px.
+- 360px.
+- 375px.
+- 390px.
+- 430px.
+
+Requirements:
+
+- No horizontal page overflow.
+- No clipped headings.
+- No inaccessible buttons.
+- No overlapping form elements.
+- No broken card proportions.
+- No unexpected page-level scrolling in the editor.
+- Homepage scrolling should remain natural.
+- Only the editor form may independently scroll on desktop.
+- Mobile form should scroll inside its own editing panel.
+- Fixed action bars must respect device safe areas.
+
+Use semantic HTML.
+
+Use proper accessible labels.
+
+Provide visible keyboard focus states.
+
+Respect reduced-motion settings.
+
+Maintain sufficient colour contrast.
+
+---
+
+# 19. PERFORMANCE
+
+The website must feel fast.
+
+Requirements:
+
+- Lazy-load gallery images where appropriate.
+- Avoid unnecessary React re-renders.
+- Debounce expensive preview rendering where necessary.
+- Use local assets.
+- Avoid large animation libraries.
+- Optimise SVG illustrations.
+- Compress decorative images.
+- Keep animations GPU-friendly.
+- Avoid memory leaks during repeated exports.
+- Clean up uploaded image resources.
+
+The application must remain usable on lower-end Android devices.
+
+---
+
+# 20. TESTING REQUIREMENTS
+
+Before declaring the project complete, test the actual application.
+
+Do not simply generate code and claim it works.
+
+### Homepage tests
+
+- Homepage loads.
+- Invitation gallery works.
+- Wishes gallery works.
+- All 20 templates are visible.
+- Selecting a template opens the correct editor state.
+- Mobile menu works.
+- All navigation links work.
+
+### Editor tests
+
+- All invitation templates load.
+- All wishes templates load.
+- Correct form fields appear for each category.
+- Live preview updates.
+- Text wrapping works.
+- Empty optional fields disappear.
+- Photograph uploads work.
+- Photograph removal works.
+- Mobile editing popup works.
+- Download works.
+- ZIP generation works.
+- Multiple guest names generate separate cards.
+
+### Responsive tests
+
+Test desktop, tablet and mobile layouts.
+
+Pay particular attention to:
+- Small phone heights.
+- Browser zoom.
+- Long guest names.
+- Long messages.
+- Large uploaded photographs.
+- Long event venue names.
+
+### Deployment tests
+
+Run:
+
+npm install
+npm run build
+
+Ensure the production build succeeds.
+
+Deploy through GitHub Actions.
+
+Verify the website works under a GitHub Pages project URL.
+
+Test direct navigation and browser refresh.
+
+Do not use root-relative asset paths that break under a repository subpath.
+
+---
+
+# 21. FINAL DELIVERY REQUIREMENTS
+
+Deliver a complete working project.
+
+Do not stop after creating a homepage mockup.
+
+Do not use placeholder cards for the 20 actual templates.
+
+Do not create buttons that look functional but do nothing.
+
+Do not omit the rendering engine.
+
+Do not omit downloads.
+
+Do not omit mobile editing.
+
+Do not omit GitHub deployment configuration.
+
+The final result must include:
+
+1. Premium homepage.
+2. Complete invitation gallery with 10 designs.
+3. Complete wishes gallery with 10 designs.
+4. Functional card editor.
+5. All required form fields.
+6. Live card previews.
+7. Photo upload and cropping.
+8. Individual PNG downloads.
+9. Bulk ZIP downloads.
+10. Responsive mobile editing experience.
+11. Christmas animations and illustrations.
+12. GitHub Pages deployment workflow.
+13. Complete README.
+14. Successful production build.
+
+## FINAL CREATIVE DIRECTION
+
+Remember:
+
+Santa Studio should feel like a premium Christmas creative studio.
+
+It should not look like:
+- A school assignment.
+- A basic Bootstrap template.
+- A generic admin dashboard.
+- A simple form connected to an image.
+- A collection of ten nearly identical cards.
+
+Think of a combination of an elegant Christmas boutique, a premium greeting-card brand and an easy-to-use online design editor.
+
+The homepage should make customers excited to explore.
+
+The editor should make personalisation effortless.
+
+The downloaded card should look professionally designed.
+
+Prioritise visual quality, usability, real functionality and maintainable architecture.
+
+Build the complete product, not just the visual concept.

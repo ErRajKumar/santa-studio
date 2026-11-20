@@ -1,0 +1,177 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'DM Sans', system-ui, -apple-system, sans-serif;
+    --font-serif-alt: 'Cormorant Garamond', Georgia, serif;
+    --font-script: 'Great Vibes', cursive;
+    --font-condensed: 'Oswald', sans-serif;
+  }
+
+  html {
+    font-family: var(--font-body);
+    scroll-behavior: smooth;
+    background-color: #091725;
+    color: #F8F1E5;
+  }
+
+  body {
+    overflow-x: hidden;
+    background-color: #091725;
+    color: #F8F1E5;
+  }
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+.font-script {
+  font-family: var(--font-script);
+}
+
+/* Custom subtle dark scrollbar for editor form & horizontal template tray */
+.studio-scroll::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.studio-scroll::-webkit-scrollbar-track {
+  background: rgba(9, 23, 37, 0.35);
+}
+
+.studio-scroll::-webkit-scrollbar-thumb {
+  background: rgba(216, 181, 109, 0.32);
+  border-radius: 9999px;
+}
+
+.studio-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(216, 181, 109, 0.55);
+}
+
+/* GPU-composited Christmas atmospheric animations */
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.22;
+    transform: scale(0.85);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.15);
+  }
+}
+
+@keyframes snowfall {
+  0% {
+    transform: translate3d(0, -10vh, 0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.72;
+  }
+  90% {
+    opacity: 0.65;
+  }
+  100% {
+    transform: translate3d(28px, 108vh, 0);
+    opacity: 0;
+  }
+}
+
+@keyframes cloudDrift {
+  0% {
+    transform: translate3d(-6%, 0, 0);
+  }
+  50% {
+    transform: translate3d(6%, 0, 0);
+  }
+  100% {
+    transform: translate3d(-6%, 0, 0);
+  }
+}
+
+@keyframes sleighGlide {
+  0% {
+    transform: translate3d(-18vw, 6px, 0);
+    opacity: 0;
+  }
+  8% {
+    opacity: 0.34;
+  }
+  92% {
+    opacity: 0.34;
+  }
+  100% {
+    transform: translate3d(118vw, -16px, 0);
+    opacity: 0;
+  }
+}
+
+@keyframes bulbGlow {
+  0%, 100% {
+    opacity: 0.55;
+    transform: scale(0.95);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.06);
+  }
+}
+
+@keyframes heroFloatSlow {
+  0%, 100% {
+    transform: translate3d(0, 0px, 0);
+  }
+  50% {
+    transform: translate3d(0, -8px, 0);
+  }
+}
+
+.animate-twinkle {
+  animation: twinkle 4.8s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+.animate-snowfall {
+  animation: snowfall linear infinite;
+  will-change: transform, opacity;
+}
+
+.animate-cloud-drift {
+  animation: cloudDrift 46s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-sleigh-glide {
+  animation: sleighGlide 52s linear infinite;
+  will-change: transform, opacity;
+}
+
+.animate-bulb-glow {
+  animation: bulbGlow 3.2s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+.animate-hero-float {
+  animation: heroFloatSlow 7s ease-in-out infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-twinkle,
+  .animate-snowfall,
+  .animate-cloud-drift,
+  .animate-sleigh-glide,
+  .animate-bulb-glow,
+  .animate-hero-float {
+    animation: none !important;
+  }
+}
